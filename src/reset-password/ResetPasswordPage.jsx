@@ -182,7 +182,7 @@ const ResetPasswordPage = (props) => {
                   name="submit-new-password"
                   type="submit"
                   variant="brand"
-                  className="reset-password--button"
+                  className="bg-main text-white border-none hover:bg-cFF0 hover:bg-opacity-85"
                   state={props.status}
                   labels={{
                     default: formatMessage(messages['reset.password']),

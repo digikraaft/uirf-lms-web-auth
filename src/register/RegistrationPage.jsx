@@ -364,7 +364,7 @@ const RegistrationPage = (props) => {
                 name="register-user"
                 type="submit"
                 variant="brand"
-                className="register-button mt-4 mb-4"
+                className="bg-cFF0 text-white border-none hover:bg-cFF0 hover:bg-opacity-85"
                 state={submitState}
                 labels={{
                   default: buttonLabel,

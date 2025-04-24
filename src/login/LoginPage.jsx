@@ -249,7 +249,7 @@ const LoginPage = (props) => {
             id="sign-in"
             type="submit"
             variant="brand"
-            className="login-button-width"
+            className="bg-cFF0 text-white border-none hover:bg-cFF0 hover:bg-opacity-85"
             state={submitState}
             labels={{
               default: formatMessage(messages['sign.in.button']),
@@ -261,7 +261,7 @@ const LoginPage = (props) => {
           <Link
             id="forgot-password"
             name="forgot-password"
-            className="btn btn-link font-weight-500 text-body"
+            className="btn btn-link text-base underline"
             to={updatePathWithQueryParams(RESET_PAGE)}
             onClick={trackForgotPasswordLinkClick}
           >

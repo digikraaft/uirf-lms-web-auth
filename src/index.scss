@@ -4,3 +4,7 @@
 @import "~@edx/brand/paragon/overrides";
 
 @import "sass/style";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

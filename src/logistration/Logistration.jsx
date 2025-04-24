@@ -12,7 +12,7 @@ import {
 } from '@openedx/paragon';
 import { ChevronLeft } from '@openedx/paragon/icons';
 import PropTypes from 'prop-types';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 import BaseContainer from '../base-container';
 import { clearThirdPartyAuthContextErrorMessage } from '../common-components/data/actions';
@@ -83,7 +83,7 @@ const Logistration = (props) => {
   const tabTitle = (
     <div className="d-flex">
       <Icon src={ChevronLeft} className="left-icon" />
-      <span className="ml-2">
+      <span className="ml-10 text-cFF0">
         {selectedPage === LOGIN_PAGE
           ? formatMessage(messages['logistration.sign.in'])
           : formatMessage(messages['logistration.register'])}
@@ -103,8 +103,8 @@ const Logistration = (props) => {
           ? (
             <>
               {institutionLogin && (
-                <Tabs defaultActiveKey="" id="controlled-tab" onSelect={handleInstitutionLogin}>
-                  <Tab title={tabTitle} eventKey={LOGIN_PAGE} />
+                <Tabs defaultActiveKey="" id="controlled-tab" className='border border-green-500' onSelect={handleInstitutionLogin}>
+                  <Tab title={tabTitle} eventKey={LOGIN_PAGE} className='border border-green-500'/>
                 </Tabs>
               )}
               <div id="main-content" className="main-content">
@@ -119,15 +119,53 @@ const Logistration = (props) => {
             <div>
               {institutionLogin
                 ? (
-                  <Tabs defaultActiveKey="" id="controlled-tab" onSelect={handleInstitutionLogin}>
-                    <Tab title={tabTitle} eventKey={selectedPage === LOGIN_PAGE ? LOGIN_PAGE : REGISTER_PAGE} />
-                  </Tabs>
+                  <div>
+                    {/* <Tabs defaultActiveKey="" id="controlled-tab" onSelect={handleInstitutionLogin}>
+                      <Tab title={tabTitle} eventKey={selectedPage === LOGIN_PAGE ? LOGIN_PAGE : REGISTER_PAGE} />
+                    </Tabs> */}
+                    <div className='relative'>
+                    {/* <Tabs defaultActiveKey={selectedPage} id="controlled-tab" className='border-none' onSelect={(tabKey) => handleOnSelect(tabKey, selectedPage)}>
+                      <Tab title={formatMessage(messages['logistration.register'])} className='border-none bg-transparent text-cFF0' eventKey={REGISTER_PAGE} />
+                      <Tab title={formatMessage(messages['logistration.sign.in'])} className='border-none bg-transparent text-cFF0' eventKey={LOGIN_PAGE} />
+                    </Tabs> */}
+                    <div className='md:flex w-[300px] items-center text-cFF0 hidden font-roboto'>
+                      {selectedPage === REGISTER_PAGE ? (
+                        <Link to={'/register'} className='w-1/2 px-4 py-0.5 hover:text-black'>
+                          {formatMessage(messages['logistration.register'])}
+                          </Link>
+                          ):(
+                          <Link to={'/login'} className='w-1/2 px-4 py-0.5 hover:text-black'>
+                            {formatMessage(messages['logistration.sign.in'])}
+                          </Link>
+                        )
+                      }
+                    </div>
+                    <div className="hidden md:flex w-[300px] h-[13px] bg-main mt-1">
+                      <div className={`h-full w-1/2 ${selectedPage === REGISTER_PAGE ? 'bg-cFF0' : ''}`}></div>
+                      <div className={`h-full w-1/2 ${selectedPage === LOGIN_PAGE ? 'bg-cFF0' : ''}`}></div>
+                    </div>
+                  </div>
+                  </div>
                 )
                 : (!isValidTpaHint() && !hideRegistrationLink && (
-                  <Tabs defaultActiveKey={selectedPage} id="controlled-tab" onSelect={(tabKey) => handleOnSelect(tabKey, selectedPage)}>
-                    <Tab title={formatMessage(messages['logistration.register'])} eventKey={REGISTER_PAGE} />
-                    <Tab title={formatMessage(messages['logistration.sign.in'])} eventKey={LOGIN_PAGE} />
-                  </Tabs>
+                  <div className='relative'>
+                    {/* <Tabs defaultActiveKey={selectedPage} id="controlled-tab" className='border-none' onSelect={(tabKey) => handleOnSelect(tabKey, selectedPage)}>
+                      <Tab title={formatMessage(messages['logistration.register'])} className='border-none bg-transparent text-cFF0' eventKey={REGISTER_PAGE} />
+                      <Tab title={formatMessage(messages['logistration.sign.in'])} className='border-none bg-transparent text-cFF0' eventKey={LOGIN_PAGE} />
+                    </Tabs> */}
+                    <div className='md:flex w-[300px] items-center text-cFF0 hidden font-roboto'>
+                      <Link to={'/register'} className='w-1/2 px-4 py-0.5 hover:text-black'>
+                        {formatMessage(messages['logistration.register'])}
+                      </Link>
+                      <Link to={'/login'} className='w-1/2 px-4 py-0.5 hover:text-black'>
+                        {formatMessage(messages['logistration.sign.in'])}
+                      </Link>
+                    </div>
+                    <div className="hidden md:flex w-[300px] h-[13px] bg-main mt-1">
+                      <div className={`h-full w-1/2 ${selectedPage === REGISTER_PAGE ? 'bg-cFF0' : ''}`}></div>
+                      <div className={`h-full w-1/2 ${selectedPage === LOGIN_PAGE ? 'bg-cFF0' : ''}`}></div>
+                    </div>
+                  </div>
                 ))}
               { key && (
                 <Navigate to={updatePathWithQueryParams(key)} replace />
