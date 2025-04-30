@@ -108,10 +108,10 @@ const ForgotPasswordPage = (props) => {
         <div id="main-content" className="main-content">
           <Form id="forget-password-form" name="forget-password-form" className="mw-xs">
             <ForgotPasswordAlert email={bannerEmail} emailError={formErrors} status={status} />
-            <h2 className="h4">
+            <h2 className="font-semibold font-poppins text-cFF0">
               {formatMessage(messages['forgot.password.page.heading'])}
             </h2>
-            <p className="mb-4">
+            <p className="mb-4 text-c56 text-sm">
               {formatMessage(messages['forgot.password.page.instructions'])}
             </p>
             <FormGroup
@@ -130,7 +130,7 @@ const ForgotPasswordPage = (props) => {
               name="submit-forget-password"
               type="submit"
               variant="brand"
-              className="forgot-password--button"
+              className="bg-cFF0 text-white border-none hover:bg-cFF0 hover:bg-opacity-85"
               state={submitState}
               labels={{
                 default: formatMessage(messages['forgot.password.page.submit.button']),
@@ -139,7 +139,7 @@ const ForgotPasswordPage = (props) => {
               onClick={handleSubmit}
               onMouseDown={(e) => e.preventDefault()}
             />
-            {(getConfig().LOGIN_ISSUE_SUPPORT_LINK) && (
+            {/* {(getConfig().LOGIN_ISSUE_SUPPORT_LINK) && (
               <Hyperlink
                 id="forgot-password"
                 name="forgot-password"
@@ -150,13 +150,13 @@ const ForgotPasswordPage = (props) => {
               >
                 {formatMessage(messages['need.help.sign.in.text'])}
               </Hyperlink>
-            )}
-            <p className="mt-5.5 small text-gray-700">
+            )} */}
+            {/* <p className="mt-5.5 small text-gray-700">
               {formatMessage(messages['additional.help.text'], { platformName })}
               <span>
                 <Hyperlink isInline destination={`mailto:${getConfig().INFO_EMAIL}`}>{getConfig().INFO_EMAIL}</Hyperlink>
               </span>
-            </p>
+            </p> */}
           </Form>
         </div>
       </div>

@@ -21,11 +21,10 @@ const HonorCode = (props) => {
 
   if (fieldType === 'tos_and_honor_code') {
     return (
-      <div id="honor-code" className="micro text-muted mt-4">
+      <div id="honor-code" className="micro text-muted mb-4">
         <FormattedMessage
           id="register.page.terms.of.service.and.honor.code"
-          defaultMessage="By creating an account, you agree to the {tosAndHonorCode} and you acknowledge that {platformName} and each
-                Member process your personal data in accordance with the {privacyPolicy}."
+          defaultMessage="I agree to all the {tosAndHonorCode} and {privacyPolicy}."
           description="Text that appears on registration form stating honor code and privacy policy"
           values={{
             platformName: getConfig().SITE_NAME,

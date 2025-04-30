@@ -46,6 +46,7 @@ import {
 import {
   getAllPossibleQueryParams, getTpaHint, getTpaProvider, isHostAvailableInQueryParams, setCookie,
 } from '../data/utils';
+import PhoneField from './RegistrationFields/PhoneNumberField/PhoneNumberField';
 
 /**
  * Main Registration Page component
@@ -308,16 +309,36 @@ const RegistrationPage = (props) => {
               context={{ provider: currentProvider, errorMessage: thirdPartyAuthErrorMessage }}
             />
             <Form id="registration-form" name="registration-form">
-              <NameField
-                name="name"
-                value={formFields.name}
-                shouldFetchUsernameSuggestions={!formFields.username.trim()}
-                handleChange={handleOnChange}
-                handleErrorChange={handleErrorChange}
-                errorMessage={errors.name}
-                helpText={[formatMessage(messages['help.text.name'])]}
-                floatingLabel={formatMessage(messages['registration.fullname.label'])}
-              />
+              <div className='flex items-center space-x-3'>
+                <NameField
+                  name="name"
+                  value={formFields.name}
+                  shouldFetchUsernameSuggestions={!formFields.username.trim()}
+                  handleChange={handleOnChange}
+                  handleErrorChange={handleErrorChange}
+                  errorMessage={errors.name}
+                  floatingLabel={formatMessage(messages['registration.fullname.label'])}
+                />
+                <NameField
+                  name="lastname"
+                  value={formFields.lastname}
+                  shouldFetchUsernameSuggestions={!formFields.username.trim()}
+                  handleChange={handleOnChange}
+                  handleErrorChange={handleErrorChange}
+                  errorMessage={errors.lastname}
+                  floatingLabel={formatMessage(messages['registration.lastname.label'])}
+                />
+                <NameField
+                  name="middlename"
+                  value={formFields.middlename}
+                  shouldFetchUsernameSuggestions={!formFields.username.trim()}
+                  handleChange={handleOnChange}
+                  handleErrorChange={handleErrorChange}
+                  errorMessage={errors.middlename}
+                  floatingLabel={formatMessage(messages['registration.middlename.label'])}
+                />
+              </div>
+              
               <EmailField
                 name="email"
                 value={formFields.email}
@@ -340,8 +361,17 @@ const RegistrationPage = (props) => {
                   floatingLabel={formatMessage(messages['registration.username.label'])}
                 />
               )}
+              <PhoneField
+                id='phone-field'
+                className=" "
+                name="phone_number"
+                value={formFields.phone_number}
+                handleChange={handleOnChange}
+                handleErrorChange={handleErrorChange}
+              />
               {!currentProvider && (
                 <PasswordField
+                  id='password-field'
                   name="password"
                   value={formFields.password}
                   handleChange={handleOnChange}
@@ -350,6 +380,17 @@ const RegistrationPage = (props) => {
                   floatingLabel={formatMessage(messages['registration.password.label'])}
                 />
               )}
+              <PasswordField
+                  id='confirmpassword-field'
+                  name="confirmpassword"
+                  value={formFields.confirmpassword}
+                  handleChange={handleOnChange}
+                  handleErrorChange={handleErrorChange}
+                  errorMessage={errors.password}
+                  floatingLabel={formatMessage(messages['registration.confirmpassword.label'])}
+              />
+
+              
               <ConfigurableRegistrationForm
                 email={formFields.email}
                 fieldErrors={errors}

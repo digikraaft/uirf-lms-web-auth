@@ -39,8 +39,8 @@ const ConfigurableRegistrationForm = (props) => {
  */
   const countryList = useMemo(() => getCountryList(getLocale()).concat([{ code: 'US', name: 'United States' }]), []);
 
-  let showTermsOfServiceAndHonorCode = false;
-  let showCountryField = false;
+  let showTermsOfServiceAndHonorCode = true;
+  let showCountryField = true;
 
   const formFieldDescriptions = [];
   const honorCode = [];

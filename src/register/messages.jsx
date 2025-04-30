@@ -12,6 +12,21 @@ const messages = defineMessages({
     defaultMessage: 'Full name',
     description: 'Label that appears above fullname field',
   },
+  'registration.firstname.label': {
+    id: 'registration.firstname.label',
+    defaultMessage: 'First name',
+    description: 'Label that appears above firstname field',
+  },
+  'registration.lastname.label': {
+    id: 'registration.lastname.label',
+    defaultMessage: 'Last name',
+    description: 'Label that appears above lastname field',
+  },
+  'registration.middlename.label': {
+    id: 'registration.middlename.label',
+    defaultMessage: 'Middle name',
+    description: 'Label that appears above middlename field',
+  },
   'registration.email.label': {
     id: 'registration.email.label',
     defaultMessage: 'Email',
@@ -24,6 +39,11 @@ const messages = defineMessages({
   },
   'registration.password.label': {
     id: 'registration.password.label',
+    defaultMessage: 'Password',
+    description: 'Label that appears above password field',
+  },
+  'registration.confirmpassword.label': {
+    id: 'registration.confirmpassword.label',
     defaultMessage: 'Password',
     description: 'Label that appears above password field',
   },
@@ -125,6 +145,11 @@ const messages = defineMessages({
     id: 'name.validation.message',
     defaultMessage: 'Enter a valid name',
     description: 'Validation message that appears when fullname contain URL',
+  },
+  'phone.validation.message': {
+    id: 'phone.validation.message',
+    defaultMessage: 'Enter a valid phone number',
+    description: 'Validation message that appears when phone number contain URL',
   },
   'password.validation.message': {
     id: 'password.validation.message',

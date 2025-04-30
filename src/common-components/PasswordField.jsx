@@ -186,6 +186,7 @@ import { validatePasswordField } from '../register/data/utils';
 import { fetchRealtimeValidations, clearRegistrationBackendError } from '../register/data/actions';
 
 const PasswordField = ({
+  id,
   name,
   value,
   floatingLabel,
@@ -246,7 +247,7 @@ const PasswordField = ({
     <div className="w-full relative mb-4">
       <input
         type={isPasswordHidden ? 'password' : 'text'}
-        id={`${name}-field`}
+        id={id}
         name={name}
         placeholder={floatingLabel}
         autoComplete={autoComplete}
@@ -319,6 +320,7 @@ PasswordField.defaultProps = {
 };
 
 PasswordField.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   floatingLabel: PropTypes.string.isRequired,
