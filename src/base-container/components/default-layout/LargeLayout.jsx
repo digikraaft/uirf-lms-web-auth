@@ -7,13 +7,15 @@ import classNames from 'classnames';
 
 import messages from './messages';
 
+import { student } from '../../../asset/index';
+
 const LargeLayout = () => {
   const { formatMessage } = useIntl();
 
   return (
     <div className="w-full hidden xl:w-[45%] h-[90vh] md:min-h-[80%] xl:flex items-center">
       <img
-        src="../asset/student.svg"
+        src={student}
         alt="student illustration"
         className=""
       />

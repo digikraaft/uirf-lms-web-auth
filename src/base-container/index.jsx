@@ -8,15 +8,16 @@ import { DefaultLargeLayout, } from './components/default-layout';
 import { ImageLargeLayout, 
 } from './components/image-layout';
 import { AuthLargeLayout, } from './components/welcome-page-layout';
+import { arc } from '../asset/index';
 
 const BaseContainer = ({ children, showWelcomeBanner, fullName }) => {
   const enableImageLayout = getConfig().ENABLE_IMAGE_LAYOUT;
 
   if (enableImageLayout) {
     return (
-      <div className="layout bg-main flex items-end md:block w-full h-screen relative">
+      <div className="layout !bg-main flex items-end md:block w-full h-screen relative">
         <img
-          src="../asset/arc.svg"
+          src={arc}
           loading="lazy"
           alt=""
           className="absolute right-0 z-0 hidden md:inline"

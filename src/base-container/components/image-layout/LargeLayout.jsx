@@ -3,6 +3,7 @@ import React from 'react';
 import { getConfig } from '@edx/frontend-platform';
 import { useIntl } from '@edx/frontend-platform/i18n';
 import { Hyperlink, Image } from '@openedx/paragon';
+import {student} from '../../../asset/index'
 
 import './index.scss';
 import messages from './messages';
@@ -12,8 +13,7 @@ const LargeLayout = () => {
 
   return (
     <div
-      className="w-50 bg-primary-500 banner__image large-layout"
-      style={{ backgroundImage: `url(${getConfig().BANNER_IMAGE_LARGE})` }}
+      className="w-50 bg-main banner__image large-layout"
     >
       <Hyperlink destination={getConfig().MARKETING_SITE_BASE_URL}>
         <Image className="company-logo position-absolute" alt={getConfig().SITE_NAME} src={getConfig().LOGO_WHITE_URL} />
