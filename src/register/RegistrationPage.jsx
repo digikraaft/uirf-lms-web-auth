@@ -380,16 +380,6 @@ const RegistrationPage = (props) => {
                   floatingLabel={formatMessage(messages['registration.password.label'])}
                 />
               )}
-              <PasswordField
-                  id='confirmpassword-field'
-                  name="confirmpassword"
-                  value={formFields.confirmpassword}
-                  handleChange={handleOnChange}
-                  handleErrorChange={handleErrorChange}
-                  errorMessage={errors.password}
-                  floatingLabel={formatMessage(messages['registration.confirmpassword.label'])}
-              />
-
               
               <ConfigurableRegistrationForm
                 email={formFields.email}

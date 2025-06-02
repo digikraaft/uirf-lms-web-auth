@@ -36,7 +36,7 @@ const BaseContainer = ({ children, showWelcomeBanner, fullName }) => {
 
   return (
     <>
-      <div className="layout bg-main flex items-end md:block w-full h-screen relative">
+      <div className="layout bg-main flex items-end md:block w-full min-h-screen relative">
         <img
           src="../asset/arc.svg"
           loading="lazy"
