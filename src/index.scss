@@ -8,3 +8,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#root .layout .content #main-content .btn-brand{
+  background-color: #fe6f00 !important;
+  border-color: #fe6f00 !important;
+}
+.form-control:focus {
+  border-color: #fe6f00 !important;
+  box-shadow: 0 0 0 1px #fe6f00 !important;
+}
+#root .layout{
+  background: #F5E3C3 !important;
+}
+[dir=ltr] #root .layout:before {
+  box-shadow: none !important;
+}
+[dir=ltr] #root .layout:after, [dir=ltr] #root .layout:before {
+  box-shadow: none !important;
+}
