@@ -13,10 +13,10 @@ const LargeLayout = () => {
   const { formatMessage } = useIntl();
 
   return (
-    <div className="w-full hidden xl:w-[45%] h-[90vh] md:min-h-[80%] xl:flex items-center">
+    <div className="w-full hidden xl:w-[75%] h-[90vh] md:min-h-[80%] xl:flex items-center">
       <img
         src={student}
-        alt="student illustration"
+        alt="Log into ASK4BG illustration"
         className=""
       />
     </div>
